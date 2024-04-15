@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isFlipped=false;
     private OvershootInterpolator interpolator=new OvershootInterpolator();
     private final int duration=300;
-    private final String quoteUrl = "http://10.0.1.156:8080/quote";
+    private final String quoteUrl = "http://192.168.28.8:8080/quote";
     int[] images = {
             R.drawable.motiv,
             R.drawable.tate_a,
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                quote.setText(motivationalQuotes[getRandomNumber()]);
                 HttpRequestTask httpRequestTask = new HttpRequestTask();
-                Future<String> future = httpRequestTask.makeHttpRequest("http://10.0.1.156:8080/quote");
+                Future<String> future = httpRequestTask.makeHttpRequest(quoteUrl);
 
                 try {
                     String result = future.get(); // This will block until the result is available
